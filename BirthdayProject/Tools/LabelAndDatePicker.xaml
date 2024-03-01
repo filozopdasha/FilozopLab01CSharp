@@ -15,7 +15,7 @@
             <ColumnDefinition Width = "400" />
             <ColumnDefinition Width = "200" />
         </Grid.ColumnDefinitions >
-        <Label x:Name = "BCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "20" Foreground = "Gray" FontSize = "20" />
+        <Label x:Name = "BCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "15" Foreground = "Gray" FontSize = "20" />
         <DatePicker x:Name = "DField" Grid.Row = "1" Grid.Column = "1" ></DatePicker >
     </Grid>
 </UserControl>
