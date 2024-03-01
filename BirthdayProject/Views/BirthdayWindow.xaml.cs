@@ -17,9 +17,9 @@ namespace FilozopLab01.BirthdayProject.Views
             this.DataContext = _viewModel = new ViewModelBirthday();
         }
 
-        private void datePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        private void Changed_Date(object sender, SelectionChangedEventArgs e)
         {
-            DateTime? selectedDate = dateField.SelectedDate;
+            DateTime? selectedDate = DField.SelectedDate;
             if (selectedDate != null)
             {
                 _viewModel.UpdateDate = selectedDate.Value;
@@ -27,7 +27,7 @@ namespace FilozopLab01.BirthdayProject.Views
         }
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            _viewModel.chooseBirthdayDate();
+            _viewModel.ChooseBirthdayDate();
         }
 
     }

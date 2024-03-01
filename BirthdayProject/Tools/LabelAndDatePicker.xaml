@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:FilozopLab01.BirthdayProject.Tools"
         mc:Ignorable="d">
     <Grid>
-        <Label x:Name = "birthdayCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "20" Foreground = "Gray" FontSize = "20" />
-        <DatePicker x:Name = "dateField" Grid.Row = "1" Grid.Column = "1" ></DatePicker >
+        <Grid.RowDefinitions >
+            <RowDefinition Height = "Auto" />
+            <RowDefinition Height = "Auto" />
+        </Grid.RowDefinitions >
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width = "200" />
+            <ColumnDefinition Width = "400" />
+            <ColumnDefinition Width = "200" />
+        </Grid.ColumnDefinitions >
+        <Label x:Name = "BCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "20" Foreground = "Gray" FontSize = "20" />
+        <DatePicker x:Name = "DField" Grid.Row = "1" Grid.Column = "1" ></DatePicker >
     </Grid>
 </UserControl>

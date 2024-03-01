@@ -7,18 +7,30 @@ namespace FilozopLab01.BirthdayProject.Tools
     {
         public string Caption
         {
-            get { return (string)birthdayCaption.Content; }
-            set { birthdayCaption.Content = value; }
+            get 
+            {
+                return (string)BCaption.Content; 
+            }
+            set 
+            {
+                BCaption.Content = value; 
+            }
         }
 
         public string Text
         {
-            get { return dateField.Text; }
+            get 
+            {
+                return DField.Text; 
+            }
         }
 
         public DateTime Value
         {
-            get { return dateField.SelectedDate.Value; }
+            get 
+            {
+                return DField.SelectedDate.Value;
+            }
         }
 
         public LabelAndDatePicker()

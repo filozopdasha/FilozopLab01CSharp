@@ -29,10 +29,10 @@ namespace FilozopLab01.Models
 
         public int CountUserAge()
         {
-            var currentDate = DateTime.Today;
-            int age = currentDate.Year - _birthday.Year;
+            var todayDate = DateTime.Today;
+            int age = todayDate.Year - _birthday.Year;
 
-            if (currentDate.Month < _birthday.Month || (currentDate.Month == _birthday.Month && currentDate.Day < _birthday.Day))
+            if (todayDate.Month < _birthday.Month || (todayDate.Month == _birthday.Month && todayDate.Day < _birthday.Day))
             {
                 age--;
             }
@@ -40,12 +40,12 @@ namespace FilozopLab01.Models
             return age;
         }
 
-        public bool ValidationOfDate()
+        public bool DateIsValid()
         {
             var userAge = CountUserAge();
-            var currentDate = DateTime.Today;
+            var todayDate = DateTime.Today;
 
-            if (_birthday > currentDate || userAge < 0 || userAge > 135)
+            if (_birthday > todayDate || userAge < 0 || userAge > 135)
             {
                 return false;
             }
@@ -53,30 +53,6 @@ namespace FilozopLab01.Models
             return true;
         }
 
-        public string CountUserAgeWithValidation()
-        {
-            var currentDate = DateTime.Today;
-            int age = currentDate.Year - _birthday.Year;
-
-            if (currentDate.Month < _birthday.Month ||
-                (currentDate.Month == _birthday.Month && currentDate.Day < _birthday.Day))
-            {
-                age--;
-            }
-
-            if (age < 0)
-            {
-                return "You're too young!";
-            }
-            else if (age > 135)
-            {
-                return "You're too old!";
-            }
-            else
-            {
-                return $"Your current age is: {age}";
-            }
-        }
         public Boolean TodayIsBirthday()
         {
             return _birthday.Month == DateTime.Today.Month && _birthday.Day == DateTime.Today.Day;
@@ -84,11 +60,11 @@ namespace FilozopLab01.Models
 
         public string ZodiacChinese()
         {
-            var bdayYear = _birthday.Year;
-            return chineseZodiacSign[bdayYear % 12];
+            var birthdayYear = _birthday.Year;
+            return chineseZodiacSign[birthdayYear % 12];
         }
 
-        public string WesternZodiacSign()
+        public string ZodiacWestern()
         {
             int month = _birthday.Month;
             int day = _birthday.Day;

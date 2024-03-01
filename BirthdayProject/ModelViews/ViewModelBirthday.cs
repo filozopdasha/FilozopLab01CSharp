@@ -42,16 +42,19 @@ namespace FilozopLab01.BirthdayProject.ViewModels
             }
         }
 
-        public string ChineseZodiac
+        public string ChineseZodiacSign
         {
             get 
             {
                 return _chineseZodiacSign; 
             }
-            set { _chineseZodiacSign = value; OnPropertyChanged(); }
+            set 
+            {
+                _chineseZodiacSign = value; OnPropertyChanged(); 
+            }
         }
 
-        public string BasicZodiac
+        public string WesternZodiacSign
         {
             get 
             {
@@ -65,11 +68,11 @@ namespace FilozopLab01.BirthdayProject.ViewModels
         #endregion
 
 
-        public void chooseBirthdayDate()
+        public void ChooseBirthdayDate()
         {
             var userAge = _birthday.CountUserAge();
 
-            if (!_birthday.ValidationOfDate())
+            if (!_birthday.DateIsValid())
             {
                 if (userAge < 0)
                 {
@@ -83,6 +86,9 @@ namespace FilozopLab01.BirthdayProject.ViewModels
                 {
                     MessageBox.Show("Invalid birthday");
                 }
+                Age = "";
+                ChineseZodiacSign = "";
+                WesternZodiacSign = "";
 
             }
             else
@@ -97,16 +103,15 @@ namespace FilozopLab01.BirthdayProject.ViewModels
                     Age = $"Your age is: {userAge}";
                 }
 
-                ChineseZodiac = $"Your Chinese Zodiac Sign: {_birthday.ZodiacChinese()}";
-                BasicZodiac = $"Your Western Zodiac Sign: {_birthday.WesternZodiacSign()}";
+                ChineseZodiacSign = $"Your Chinese Zodiac Sign: {_birthday.ZodiacChinese()}";
+                WesternZodiacSign = $"Your Western Zodiac Sign: {_birthday.ZodiacWestern()}";
             }
         }
 
 
         public void OnPropertyChanged([CallerMemberName] string property = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }

@@ -22,11 +22,11 @@
             <ColumnDefinition Width = "200" />
         </Grid.ColumnDefinitions >
         
-        <Label x:Name = "birthdayCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "20" Foreground = "Gray" FontSize = "20" />
-        <DatePicker x:Name = "dateField" Grid.Row = "1" Grid.Column = "1" SelectedDateChanged="datePicker_SelectedDateChanged" ></DatePicker >
-        <Button x:Name = "confirmButton" Content = "Confirm" Grid.Row = "2" Grid.Column = "1" Padding = "5" HorizontalAlignment = "Center" VerticalAlignment = "Bottom" Foreground = "Gray" Click = "Confirm_Click" ></Button >
+        <Label x:Name = "BCaption" Content = "Birthday App" Grid.Row = "0" Grid.Column = "1" HorizontalAlignment = "Center" Margin = "20" Foreground = "Gray" FontSize = "20" />
+        <DatePicker x:Name = "DField" Grid.Row = "1" Grid.Column = "1" SelectedDateChanged="Changed_Date" ></DatePicker >
+        <Button x:Name = "CButton" Content = "Confirm" Grid.Row = "2" Grid.Column = "1" Padding = "5" HorizontalAlignment = "Center" VerticalAlignment = "Bottom" Foreground = "Gray" Click = "Confirm_Click" ></Button >
         <TextBlock Text="{Binding Age}" Grid.Row = "3" Grid.Column = "1" Margin = "0,10,0,0" />
-        <TextBlock Text="{Binding BasicZodiac}" Grid.Row = "4" Grid.Column = "1" Margin = "0,10,0,0" />
-        <TextBlock Text="{Binding ChineseZodiac}" Grid.Row = "5" Grid.Column = "1" Margin = "0,10,0,0" />
+        <TextBlock Text="{Binding WesternZodiacSign}" Grid.Row = "4" Grid.Column = "1" Margin = "0,10,0,0" />
+        <TextBlock Text="{Binding ChineseZodiacSign}" Grid.Row = "5" Grid.Column = "1" Margin = "0,10,0,0" />
     </Grid>
 </UserControl>
